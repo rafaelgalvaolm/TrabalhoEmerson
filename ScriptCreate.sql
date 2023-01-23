@@ -1,13 +1,13 @@
-CREATE DATABASE dbo.Emerson;
-use dbo.Emerson;
+--CREATE DATABASE Emerson;
+--use Emerson;
 
-CREATE TABLE IF NOT EXISTS cliente(
+CREATE TABLE cliente(
     id INT PRIMARY KEY IDENTITY(1,1),
     nome VARCHAR(100) NOT NULL, 
     telefone BIGINT NOT NULL, 
 );
 
-CREATE TABLE IF NOT EXISTS endereco(
+CREATE TABLE endereco(
     id INT PRIMARY KEY IDENTITY(1,1),
     cliente_id INT NOT NULL,
     nome_rua VARCHAR(80) NOT NULL, 
@@ -19,19 +19,19 @@ CREATE TABLE IF NOT EXISTS endereco(
         REFERENCES cliente (id)
 );
 
-CREATE TABLE IF NOT EXISTS funcionario( 
+CREATE TABLE funcionario( 
     id INT PRIMARY KEY IDENTITY(1,1),
     nome VARCHAR(100) NOT NULL, 
     data_contrato DATE NOT NULL,
     salario DECIMAL(6,2) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS categoria( 
+CREATE TABLE categoria( 
     id INT PRIMARY KEY IDENTITY(1,1),
     nome VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS produto( 
+CREATE TABLE produto( 
     id INT PRIMARY KEY IDENTITY(1,1),
     categoria_id INT NOT NULL, 
     nome VARCHAR(60) NOT NULL, 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS produto(
         REFERENCES categoria(id)
 );
 
-CREATE TABLE IF NOT EXISTS venda( 
+CREATE TABLE venda( 
     id INT PRIMARY KEY IDENTITY(1,1),
     funcionario_id INT NOT NULL, 
     produto_id INT NOT NULL, 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS venda(
         REFERENCES produto(id) 
 ); 
 
-CREATE TABLE IF NOT EXISTS pedido( 
+CREATE TABLE pedido( 
     id INT PRIMARY KEY IDENTITY(1,1),
     cliente_id INT NOT NULL, 
     produto_id INT NOT NULL, 
