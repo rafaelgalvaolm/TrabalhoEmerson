@@ -17,7 +17,7 @@ AS
 	*/
 
 BEGIN
-    DECLARE @comissao = 0.4
+    DECLARE @comissao FLOAT = 0.4
     
 
     CREATE TABLE #sales_performance (
