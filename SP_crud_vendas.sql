@@ -5,7 +5,7 @@ IF EXISTS(SELECT TOP 1 1 FROM sysobjects WHERE ID = object_id(N'[SP.SelVenda]') 
 GO
 
 CREATE PROCEDURE [SP.SelVenda]
-	@id int = NULL,
+	@id int = NULL
 
 	AS
 
@@ -81,7 +81,7 @@ GO
 	@id                    int,
 	@funcionario_id        int,
 	@produto_id			   int,
-	@data_venda            datetime
+	@data_venda            datetime,
     @preco                 decimal(7,2)
 	
 	AS
@@ -148,15 +148,7 @@ GO
 
 		IF @@ROWCOUNT = 0
 				 RETURN 1
-
-        ELSE IF @funcionario_id EXISTS 
-                 RETURN 2
-
-        ELSE IF @produto_id EXISTS
-                 RETURN 3
-
-        ELSE
-
+				 
 		RETURN DATEDIFF(MILLISECOND, @DATEINT, GETDATE())
 
 		END
