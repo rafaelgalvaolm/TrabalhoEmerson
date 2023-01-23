@@ -1,3 +1,6 @@
+CREATE DATABASE dbo.Emerson;
+use dbo.Emerson;
+
 CREATE TABLE IF NOT EXISTS cliente(
     id INT PRIMARY KEY IDENTITY(1,1),
     nome VARCHAR(100) NOT NULL, 
@@ -11,7 +14,7 @@ CREATE TABLE IF NOT EXISTS endereco(
     numero SMALLINT,
     bairro VARCHAR(50) NOT NULL,
     cidade VARCHAR(60) NOT NULL,
-    estado VARCHAR(30) NOT NULL,
+    estado CHAR(2) NOT NULL,
     CONSTRAINT fk_cliente_id1 FOREIGN KEY (cliente_id) 
         REFERENCES cliente (id)
 );

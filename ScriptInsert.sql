@@ -1,4 +1,3 @@
-Copy code
 INSERT INTO cliente (nome, telefone) VALUES 
 ('João Silva', '1234567890'), 
 ('Maria Silva', '0987654321'),
@@ -14,11 +13,11 @@ INSERT INTO endereco (cliente_id, nome_rua, numero, bairro, cidade, estado) VALU
 (5, 'Rua dos Coqueiros', '654', 'Praia', 'Recife', 'PE');
 
 INSERT INTO funcionario (nome, data_contrato, salario) VALUES 
-('Fernanda Souza', '2020-01-01', '2000.00'),
-('Lucas Almeida', '2020-02-01', '3000.00'),
-('Mateus Costa', '2020-03-01', '2500.00'),
-('Isabela Oliveira', '2020-04-01', '3500.00'),
-('Eduardo Silva', '2020-05-01', '4500.00');
+('Fernanda Souza', '20200101', '2000.00'),
+('Lucas Almeida', '20200201', '3000.00'),
+('Mateus Costa', '20200301', '2500.00'),
+('Isabela Oliveira', '20200401', '3500.00'),
+('Eduardo Silva', '20200501', '4500.00');
 
 INSERT INTO categoria (nome) VALUES 
 ('Eletrônicos'),
@@ -35,15 +34,15 @@ INSERT INTO produto (categoria_id, nome, descricao, preco) VALUES
 (5, 'Jogo de tabuleiro', 'Jogo de tabuleiro para família', '70.00');
 
 INSERT INTO venda (funcionario_id, produto_id, data_venda) VALUES 
-(1, 1, '2020-01-01 12:00:00'),
-(2, 2, '2020-02-01 13:00:00'),
-(3, 3, '2020-03-01 14:00:00'),
-(4, 4, '2020-04-01 15:00:00'),
-(5, 5, '2020-05-01 16:00:00');
+(1, 1, '20200101 12:00:00'),
+(2, 2, '20200201 13:00:00'),
+(3, 3, '20200301 14:00:00'),
+(4, 4, '20200401 15:00:00'),
+(5, 5, '20200501 16:00:00');
 
 INSERT INTO pedido (cliente_id, produto_id, data_pedido, quantidade, preco) VALUES 
-(1, 1, '2020-01-01', 2, '4000.00'),
-(2, 2, '2020-02-01', 1, '50.00'),
-(3, 3, '2020-03-01', 5, '500.00'),
-(4, 4, '2020-04-01', 3, '90.00'),
-(5, 5, '2020-05-01', 1, '70.00');
+(1, 1, '20200101', 2, '4000.00'),
+(2, 2, '20200201', 1, '50.00'),
+(3, 3, '20200301', 5, '500.00'),
+(4, 4, '20200401', 3, '90.00'),
+(5, 5, '20200501', 1, '70.00');

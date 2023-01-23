@@ -10,10 +10,10 @@ AS
 
 	/* Documentação
 	Arquivo Fonte..........: venda.sql
-	Objetivo...............: Sera um relatório para mostrar o desempenho de vendas agrupado por categoria de produto e por funcionário
+	Objetivo...............: Criará um relatório para mostrar o desempenho de vendas agrupado por categoria de produto e por funcionário
 	Autor..................: Rafael Galvão
 	Data...................: 23/01/2023
-	Ex.....................: EXEC [SP.sales_performance_report] @id = 1
+	Ex.....................: EXEC [SP.sales_performance_report] @data_inicial = '20200101', @data_final = '20200301'
 	*/
 
 BEGIN
