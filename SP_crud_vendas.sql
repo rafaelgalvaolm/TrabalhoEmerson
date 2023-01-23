@@ -16,6 +16,7 @@ CREATE PROCEDURE [SP.SelVenda]
 	Data...................: 23/01/2023
 	Ex.....................: EXEC [SP.SelVenda] @id = 1
 	*/
+
 	BEGIN
 
     
@@ -40,7 +41,8 @@ GO
 CREATE PROCEDURE [SP.InsVenda]
 	@funcionario_id        int,
 	@produto_id			   int,
-	@data_venda            datetime
+	@data_venda            datetime,
+    @preco                 decimal(7,2)
 
 	AS
 
@@ -49,15 +51,15 @@ CREATE PROCEDURE [SP.InsVenda]
 	Objetivo..............: Inserir um ou mais dados dentro da tabela venda
 	Autor.................: Rafael Galvão
 	Data..................: 23/01/2023
-	EX....................: EXEC [SP.InsVenda] @funcionario_id = 3, @produto_id = 23, @data_venda = '20230113 20:00:56'
+	EX....................:  EXEC [SP.InsVenda] @funcionario_id = 3, @produto_id = 23, @data_venda = '20230113 20:00:56'
 	código de retorno.....: 0 - Execução OK
                             1 - Execução Falhou
 	*/
 
 	BEGIN
 
-		INSERT INTO dbo.venda (funcionario_id, produto_id, data_venda)
-			VALUES (@funcionario_id, @produto_id, @data_venda)
+		INSERT INTO dbo.venda (funcionario_id, produto_id, data_venda, preco)
+			VALUES (@funcionario_id, @produto_id, @data_venda, @preco)
 
 		IF @@ERROR <> 0
 			RETURN 1
@@ -80,6 +82,7 @@ GO
 	@funcionario_id        int,
 	@produto_id			   int,
 	@data_venda            datetime
+    @preco                 decimal(7,2)
 	
 	AS
 
@@ -88,7 +91,7 @@ GO
         Objetivo ...........: Atualizar um ou mais registros na tabela venda
         Autor ..............: Rafael Galvão
         Data ...............: 23/01/2023
-        Ex .................: EXEC [SP.UpVenda] @id = 10, @funcionario_id = 5, @produto_id = 40, @data_venda = '20230110 13:12:32'
+        Ex .................: EXEC [SP.UpVenda] @id = 10, @funcionario_id = 5, @produto_id = 40, @data_venda = '20230110 13:12:32', @preco = 3457,40
         Códigos de retorno: 0 - excução ok
                             1 - id não encontrado
         */
@@ -98,7 +101,8 @@ GO
 		UPDATE dbo.venda
 		SET  funcionario_id = @funcionario_id,
 			 produto_id = @produto_id,
-			 data_venda = @data_venda
+			 data_venda = @data_venda,
+             preco = @preco
 	   WHERE id = @id
 
 	IF @@ROWCOUNT = 0

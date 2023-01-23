@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS venda(
     funcionario_id INT NOT NULL, 
     produto_id INT NOT NULL, 
     data_venda DATETIME NOT NULL,
+    preco DECIMAL(7,2) NOT NULL,
     CONSTRAINT fk_funcionario_id  FOREIGN KEY (funcionario_id)
         REFERENCES funcionario(id),
     CONSTRAINT fk_produto_id FOREIGN KEY (produto_id)
