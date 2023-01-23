@@ -33,12 +33,12 @@ INSERT INTO produto (categoria_id, nome, descricao, preco) VALUES
 (4, 'Camiseta', 'Camiseta de algodão', '30.00'),
 (5, 'Jogo de tabuleiro', 'Jogo de tabuleiro para família', '70.00');
 
-INSERT INTO venda (funcionario_id, produto_id, data_venda) VALUES 
-(1, 1, '20200101 12:00:00'),
-(2, 2, '20200201 13:00:00'),
-(3, 3, '20200301 14:00:00'),
-(4, 4, '20200401 15:00:00'),
-(5, 5, '20200501 16:00:00');
+INSERT INTO venda (funcionario_id, produto_id, data_venda, preco) VALUES 
+(1, 1, '20200101 12:00:00','2000.00'),
+(2, 2, '20200201 13:00:00','50.00'),
+(3, 3, '20200301 14:00:00','100.00'),
+(4, 4, '20200401 15:00:00','30.00'),
+(5, 5, '20200501 16:00:00','70.00');
 
 INSERT INTO pedido (cliente_id, produto_id, data_pedido, quantidade, preco) VALUES 
 (1, 1, '20200101', 2, '4000.00'),
